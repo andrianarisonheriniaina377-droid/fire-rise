@@ -1,10 +1,27 @@
 {
   "compilerOptions": {
-    "composite": true,
-    "skipLibCheck": true,
+    "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
+    "jsx": "react-jsx",
+    "moduleResolution": "Node",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "src",
+    "index.tsx",
+    "components",
+    "backend"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "public",
+    "vite.config.ts",
+    "postcss.config.js",
+    "tailwind.config.js"
+  ]
 }
