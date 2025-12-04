@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fire Rise - Ministère du Saint-Esprit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Roboto', 'sans-serif'],
+              heading: ['Montserrat', 'sans-serif'],
+            },
+            colors: {
+              fire: {
+                100: '#fff7ed',
+                300: '#fdba74',
+                500: '#f97316',
+                600: '#ea580c',
+                700: '#c2410c',
+                900: '#7c2d12',
+              },
+              dark: {
+                900: '#0f0f10',
+                800: '#18181b',
+                700: '#27272a',
+              }
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              zoomIn: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              firePulse: {
+                '0%, 100%': { transform: 'scale(1)', opacity: '1', filter: 'drop-shadow(0 0 10px #f97316)' },
+                '50%': { transform: 'scale(1.1)', opacity: '0.8', filter: 'drop-shadow(0 0 25px #dc2626)' },
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.7s ease-out forwards',
+              'zoom-in': 'zoomIn 0.2s ease-out forwards',
+              'fire-pulse': 'firePulse 2s infinite ease-in-out',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #0f0f10;
+        color: #f3f4f6;
+      }
+      .fire-gradient {
+        background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .fire-bg-gradient {
+        background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
